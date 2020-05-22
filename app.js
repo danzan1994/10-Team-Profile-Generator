@@ -6,6 +6,8 @@ const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
 
+
+
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
@@ -114,7 +116,7 @@ function promptUser() {
         {
             type: "input",
             name: "linkedinIntern",
-            message: "Enter linkedin account of intern: "
+            message: "Enter name of School of intern: "
         },
        
     ]);
@@ -125,12 +127,12 @@ function promptUser() {
     console.log("hi")
     try {
         const answers = await promptUser();
+
+        const path = require("path");
   
-        const html = generateHTML(answers);
-      //writeFile will creat html page with the answers
-        await writeFileAsync("index.html", html);
+        await writeFileAsync("app.js", html);
   
-        console.log("Successfully wrote to index.html");
+        console.log("Successfully wrote to app.js");
     } catch (err) {
         console.log(err);
     }
